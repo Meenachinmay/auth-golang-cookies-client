@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider} from 'react-router-dom';
 import Chat from "./components/Chat";
 import Login from "./components/Login";
+import Dashboard from "./components/Dashboard";
 
 const router = createBrowserRouter([
     {
@@ -20,8 +21,11 @@ const router = createBrowserRouter([
     {
         path: "/chat",
         element: <Chat />
+    },
+    {
+        path: "/dashboard",
+        element: <Dashboard />,
     }
-
 ])
 
 const root = ReactDOM.createRoot(

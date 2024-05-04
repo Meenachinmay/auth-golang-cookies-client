@@ -87,11 +87,9 @@ function Chat() {
             cluster: "ap3",
         })
 
-        let channel = pusher.subscribe('private-5d03b8d9-fa7b-49a9-bd08-e9fae82c79e5')
-        // let channel = pusher.subscribe('public-chat')
+        let channel = pusher.subscribe(`private-${localStorage.getItem("userId")}`);
 
         channel.bind("new-message", function(data: any) {
-            console.log("data from the pusher event" + data)
             alert("Received a message: " + JSON.stringify(data));
         })
 

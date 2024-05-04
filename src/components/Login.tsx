@@ -30,7 +30,9 @@ function Login() {
             const result = await response.json()
             console.log("login success", result);
             localStorage.setItem("token", result.token);
-            navigate("/chat")
+            localStorage.setItem("userId", result.userId);
+            navigate("/dashboard")
+            reset();
 
         } catch(error) {
             console.error("login error:", error)
