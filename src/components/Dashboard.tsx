@@ -7,6 +7,8 @@ interface NewLogin {
     username: string;
 }
 
+let pusher_key = process.env.PUSHER_APP_KEY;
+
 function Dashboard() {
     const [newLogin, setNewLogin] = useState<NewLogin[]>([]);
 
@@ -40,7 +42,8 @@ function Dashboard() {
     }, []);
 
     useEffect(() => {
-        let pusher = new Pusher("a588c229c6c62e81460e", {
+        // @ts-ignore
+        let pusher = new Pusher(pusher_key, {
             cluster: "ap3",
         })
 
